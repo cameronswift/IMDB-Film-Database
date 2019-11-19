@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+## Film Database System 
+### 5133COMP
 
-You can use the [editor on GitHub](https://github.com/Cameron-Swift/film-database-system/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is the groupwork assignment for 5133COMP - Data Structures and Algorithms.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is where **ONE GROUP MEMBER** should submit the main report.
 
-### Markdown
+It is worth **40%** of your module grade.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Key documentation is:
 
-```markdown
-Syntax highlighted code block
+The Coursework Specification is available here: 5133COMP Coursework.pdf
 
-# Header 1
-## Header 2
-### Header 3
+* A ZIP of test data files is available here.
 
-- Bulleted
-- List
+* The Coursework Marking Rubric is available here: 5133COMP Coursework Rubric.pdf, This provides a specification that outlines how your work will be marked. It indicates the requirements against each assessment category for each grade classification.
 
-1. Numbered
-2. List
+* The Coursework Peer Assessment template is available here: 5133COMP Peer Assessment Template.docx.
 
-**Bold** and _Italic_ and `Code` text
+A list of the groups can be found here.
 
-[Link](url) and ![Image](src)
-```
+This coursework is currently under review and might be subject to changes.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+By submitting any work for marking at LJMU, you are confirming that you are aware of the LJMU policy regarding cheating and all forms of academic misconduct. The submitted work is your own/the group's work and all the sources consulted have been appropriately acknowledged. You are aware that, in a case of doubt, an investigation may be held.
 
-### Jekyll Themes
+It is your responsibility to check that you have submitted the correct files.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Cameron-Swift/film-database-system/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Please note: marks may be unmoderated. Marks are finalised at the Board of Examiners.
