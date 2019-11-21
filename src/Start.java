@@ -5,5 +5,4 @@ public class Start {
 	{
 		System.out.println("Hello");
 	}
-
 }
