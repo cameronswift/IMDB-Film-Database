@@ -12,12 +12,11 @@ public class Start /* Class used for navigating the program */
 		/* READ methods will be called here for FilmTitle & Person class.
 		 * Methods will store Film & Person data in memory then program continues
 		 * from here. From then a repeating menu will present itself to the user,
-		 * to aid in the progression of the program.
-		*/
+		 * to aid in the progression of the program.*/
 		String choice = "";
 		do {
 		System.out.println("-- FILM DATABASE SYSTEM --");
-		System.out.println("-- 1. xxxx --");
+		System.out.println("-- 1. View Films --");
 		System.out.println("-- 2. xxxx --");
 		System.out.println("-- 3. xxxx --");
 		System.out.println("-- 4. xxxx --");
