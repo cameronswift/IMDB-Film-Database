@@ -5,20 +5,29 @@ which specify how you should tackle this problem and produce your deliverables; 
 next section.
 You should ensure that your software supports as many of the following features are you can (this
 list broadly increases in difficulty):
+
 A. List all the regions (region) from which you have data.
+
 B. Display all the film names (title) for a specified region (region).
+
 C. For a specified partial film title, display all possible film titles (title) along with their region
 (region).
+
 D.
+
 a. Display the name of the film (title) and the category of their contribution (category), for any
 specified person (nconst).
+
 b. Given the title of a film, display the names (nconst) and category of contribution (category)
 of all the people that worked on the film in the order (order) specified in the data.
+
 E. Find the person (nconst) with the highest number of credits to their name and display the films
 (title) they have been associated with.
+
 F.Find the person (nconst) with the highest number of credits to their name of a specified
 category type (category) and display the films (title) they have been associated with in that
 capacity.
+
 Notes:
  When a feature states “for a specified”, or similar, you should assume that the user should be
 prompted to choose – you can decide how this should be presented to the user.
