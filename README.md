@@ -1,4 +1,5 @@
-## Feature Set – Your group are to produce (design and implement) software that is capable of
+## Feature Set – 
+Your group are to produce (design and implement) software that is capable of
 performing the following features with the provided dataset. There are a number of structured tasks
 which specify how you should tackle this problem and produce your deliverables; detailed in the
 next section.
