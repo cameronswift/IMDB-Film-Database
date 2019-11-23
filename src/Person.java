@@ -1,12 +1,12 @@
 
 public class Person 
 {
-	int titleId;
-	int ordering;
-	int nconst;
-	String category;
-	String job;
-	String[] characters;
+	public int titleId;
+	public int ordering;
+	public int nconst;
+	public String category;
+	public String job;
+	public String[] characters;
 	
 	public Person(int titleId, int ordering, int nconst, String category, String job, String[] characters) 
 	{
