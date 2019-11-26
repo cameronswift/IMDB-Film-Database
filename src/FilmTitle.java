@@ -1,4 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class FilmTitle 
 {
@@ -15,7 +19,10 @@ public class FilmTitle
 		String[] csvParts = lineSplit(csvString, comma);
 		int index = 0;
 		titleId = csvParts[index++];
-		
+		ordering = csvParts[index++];
+		title = csvParts[index++];
+		region = csvParts[index++];
+		langu
 	}
 	
 	public String[] lineSplit(String csvString, String s) //spits line using input as delimiter
@@ -53,17 +60,18 @@ public class FilmTitle
 	public void searchFilms(String s) /* uses user String input, outputs film titles that contains the user's input */
 	{}
 	
-	/*public static ArrayList<FilmData> readFile(String filename) throws FileNotFoundException {
-		ArrayList<FilmData> films = new ArrayList<>();
+	public static ArrayList<FilmTitle> readFile(String filename) throws FileNotFoundException {
+		ArrayList<FilmTitle> films = new ArrayList<>();
 		File csvFile = new File(filename);
 		Scanner csvScan = new Scanner(csvFile);
 		csvScan.nextLine(); // read header
-		while (csvScan.hasNextLine()) {
+		while (csvScan.hasNextLine()) 
+		{
 			String line = csvScan.nextLine();
-			FilmData film = new FilmData(line);
+			FilmTitle film = new FilmTitle(line);
 			films.add(film);
 		}
 		csvScan.close();
 		return films;
-	}*/
+	}
 }
