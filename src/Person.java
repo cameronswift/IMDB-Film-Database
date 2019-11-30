@@ -18,3 +18,4 @@ public class Person
 		this.characters = characters;
 	}
 }
+//csvScan.nextLine(); // read header
