@@ -35,7 +35,7 @@ public class FilmTitle
 		int index = 0;
 		int qouteCount = 0;
 		String[] parts = new String[8];
-		Arrays.fill(parts, "");
+		Arrays.fill(parts, ""); //fills all 8 elements with blank string
 		
 		for(int i = 0; i < csvString.length(); i++) //running through the line
 		{
