@@ -1,14 +1,14 @@
 
 public class Person 
 {
-	public int titleId;
-	public int ordering;
-	public int nconst;
+	public String titleId;
+	public String ordering;
+	public String nconst;
 	public String category;
 	public String job;
-	public String[] characters;
+	public String characters;
 	
-	public Person(int titleId, int ordering, int nconst, String category, String job, String[] characters) 
+	public Person(String titleId, String ordering, String nconst, String category, String job, String characters) 
 	{
 		this.titleId = titleId;
 		this.ordering = ordering;
@@ -16,6 +16,26 @@ public class Person
 		this.category = category;
 		this.job = job;
 		this.characters = characters;
+	}
+	
+	public void displayTitleAndCategory(String p)
+	{
+	}
+	
+	public void displayPeopleInFilm(String titleId)
+	{
+	}
+	
+	public void highestCredits()
+	{
+	}
+	
+	public void highestCreditsCategory()
+	{
+	}
+	
+	public void readPerson()
+	{
 	}
 }
 //csvScan.nextLine(); // read header
