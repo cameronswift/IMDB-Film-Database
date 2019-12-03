@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Start /* Class used for navigating the program */
 {
-	
-	static ArrayList<Person> people = new ArrayList<Person>(); // linear data structures to store data
 	static Scanner input = new Scanner(System.in);
+	static ArrayList<Person> people = new ArrayList<Person>(); // linear data structures to store data
+	static ArrayList<FilmTitle> films = new ArrayList<FilmTitle>();
 	
 	public static void main(String[] args) throws FileNotFoundException 
 	{
@@ -14,9 +14,14 @@ public class Start /* Class used for navigating the program */
 		 * Methods will store Film & Person data in memory then program continues
 		 * from here. From then a repeating menu will present itself to the user,
 		 * to aid in the progression of the program.*/
-		ArrayList<FilmTitle> films = FilmTitle.readFile("SampleDataset-FilmTitle.csv");
-		System.out.println(films);
+		films = FilmTitle.readFile("SampleDataset-FilmTitle.csv");
 		
+		for (int i = 0; i<films.size(); i++)
+		{
+			System.out.println(films.get(i).toString());
+		}
+		
+		//MENU
 		String choice = "";
 		do {
 		System.out.println("-- FILM DATABASE SYSTEM --");

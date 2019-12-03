@@ -18,19 +18,18 @@ public class FilmTitle
 	
 	public FilmTitle(String csvString)
 	{
-		String[] csvParts = lineSplit(csvString, comma);
-		int index = 0;
-		titleId = csvParts[index++];
-		ordering = csvParts[index++];
-		title = csvParts[index++];
-		region = csvParts[index++];
-		language = csvParts[index++];
-		type = csvParts[index++];
-		attributes = csvParts[index++];
-		isOriginalTitle = csvParts[index++];
+		String csvParts[] = csvString.split(",");
+		titleId = csvParts[0];
+		ordering = csvParts[1];
+		title = csvParts[2];
+		region = csvParts[3];
+		language = csvParts[4];
+		type = csvParts[5];
+		attributes = csvParts[6];
+		isOriginalTitle = csvParts[7];
 	}
 	
-	public String[] lineSplit(String csvString, String s) //splits line using input as delimiter
+	/*public String[] lineSplit(String csvString, String s) //splits using comma
 	{
 		int index = 0;
 		int qouteCount = 0;
@@ -53,7 +52,7 @@ public class FilmTitle
 				parts[index] += csvString.charAt(i); //adds next character to parts
 		}
 		return parts;
-	}
+	} */
 	
 	public void readFilmTitles()
 	{}
@@ -75,9 +74,15 @@ public class FilmTitle
 		{
 			String line = csvScan.nextLine();
 			FilmTitle film = new FilmTitle(line); //creating new instance of object
-			tempList.add(film); //adding current film to the array list
+			tempList.add(film); //adding current film to the temporary array list
 		}
 		csvScan.close();
 		return tempList;
+	}
+
+	public String toString() {
+		return "FilmTitle [titleId=" + titleId + ", ordering=" + ordering + ", title=" + title + ", region=" + region
+				+ ", language=" + language + ", type=" + type + ", attributes=" + attributes + ", isOriginalTitle="
+				+ isOriginalTitle + "]";
 	}
 }
