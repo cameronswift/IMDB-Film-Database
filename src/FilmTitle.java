@@ -18,7 +18,7 @@ public class FilmTitle
 	
 	public FilmTitle(String csvString)
 	{
-		String csvParts[] = csvString.split(",");
+		String csvParts[] = csvString.split(comma);
 		titleId = csvParts[0];
 		ordering = csvParts[1];
 		title = csvParts[2];
@@ -53,13 +53,20 @@ public class FilmTitle
 		}
 		return parts;
 	} */
+	public String getRegion() //getter
+	{
+		return this.region;
+	}
 	
-	public void readFilmTitles()
-	{}
 	public void searchFilms()
 	{}
-	public void listRegions() /* list all regions for every film */
-	{}
+	public static void listRegions() /* list all regions for every film */
+	{
+		for (int i = 0; i<Start.films.size(); i++)
+		{
+			System.out.println(Start.films.get(i).getRegion());
+		}
+	}
 	public void getFilmTitlesUsingRegion(String r) /* uses region as input, outputs films in that region */
 	{}
 	public void searchFilms(String s) /* uses user String input, outputs film titles that contains the user's input */
@@ -80,7 +87,7 @@ public class FilmTitle
 		return tempList;
 	}
 
-	public String toString() {
+	public String filmToString() {
 		return "FilmTitle [titleId=" + titleId + ", ordering=" + ordering + ", title=" + title + ", region=" + region
 				+ ", language=" + language + ", type=" + type + ", attributes=" + attributes + ", isOriginalTitle="
 				+ isOriginalTitle + "]";
