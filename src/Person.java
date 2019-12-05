@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Person 
 {
+	public static Scanner input = new Scanner(System.in);
 	public String comma = ",";
 	public String titleId;
 	public String ordering;
@@ -24,8 +25,25 @@ public class Person
 		characters = csvParts[5];
 	}
 	
-	public void displayTitleAndCategory(String p)
+	public static void displayTitleAndCategory() //task D) A)
 	{
+		System.out.println("-- Enter Person (nconst) --");
+		String personInput = input.next();
+		for (int i = 0; i<Start.people.size(); i++)
+		{
+			if (Start.people.get(i).getnConst().equals(personInput))
+			{
+				String temporaryId = Start.people.get(i).getTitleId();
+				
+				for (int j = 0; j<Start.films.size(); j++)
+				{
+					if (temporaryId.equals(Start.films.get(j).getTitleId()))
+					{
+						System.out.printf("-- Film: %s || Category: %s --\n", Start.films.get(j).getTitle(), Start.people.get(i).getCategory());
+					}
+				}
+			}
+		}
 	}
 	
 	public void displayPeopleInFilm(String titleId)
@@ -59,6 +77,18 @@ public class Person
 	public String personToString() {
 		return "Person [titleId=" + titleId + ", ordering=" + ordering + ", nconst=" + nconst + ", category=" + category
 				+ ", job=" + job + ", characters=" + characters + "]";
+	}
+	public String getnConst()
+	{
+		return this.nconst;
+	}
+	public String getTitleId()
+	{
+		return this.titleId;
+	}
+	public String getCategory()
+	{
+		return this.category;
 	}
 }
 

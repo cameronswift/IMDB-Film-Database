@@ -57,6 +57,14 @@ public class FilmTitle
 	{
 		return this.region;
 	}
+	public String getTitleId()
+	{
+		return this.titleId;
+	}
+	public String getTitle()
+	{
+		return this.title;
+	}
 	
 	public void searchFilms()
 	{}

@@ -16,7 +16,7 @@ public class Start /* Class used for navigating the program */
 		 * to aid in the progression of the program.*/
 		films = FilmTitle.readFile("SampleDataset-FilmTitle.csv"); //filling ArrayList up with Films
 		people = Person.readPerson("SampleDataset-Person.csv"); //filling ArrayList up with people
-		
+		Person.displayTitleAndCategory();
 		
 		//MENU
 		String choice = "";
