@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class FilmTitle 
 {
+	public static Scanner input = new Scanner(System.in);
 	public String comma = ",";
 	public String titleId;
 	public String ordering;
@@ -28,7 +29,6 @@ public class FilmTitle
 		attributes = csvParts[6];
 		isOriginalTitle = csvParts[7];
 	}
-	
 	/*public String[] lineSplit(String csvString, String s) //splits using comma
 	{
 		int index = 0;
@@ -53,21 +53,12 @@ public class FilmTitle
 		}
 		return parts;
 	} */
-	public String getRegion() //getter
-	{
-		return this.region;
-	}
-	public String getTitleId()
-	{
-		return this.titleId;
-	}
-	public String getTitle()
-	{
-		return this.title;
-	}
 	
 	public void searchFilms()
-	{}
+	{
+		
+	}
+	
 	public static void listRegions() /* list all regions for every film */
 	{
 		for (int i = 0; i<Start.films.size(); i++)
@@ -75,10 +66,22 @@ public class FilmTitle
 			System.out.println(Start.films.get(i).getRegion());
 		}
 	}
-	public void getFilmTitlesUsingRegion(String r) /* uses region as input, outputs films in that region */
-	{}
+	
+	public static void getFilmTitlesUsingRegion(String r) /* uses region as input, outputs films in that region */
+	{
+		for (int i = 0; i<Start.films.size(); i++) 
+		{
+			if (Start.films.get(i).getRegion().contentEquals(r))
+			{
+				System.out.println(Start.films.get(i).getTitle());
+			}
+		}
+	}
+	
 	public void searchFilms(String s) /* uses user String input, outputs film titles that contains the user's input */
-	{}
+	{
+		
+	}
 	
 	public static ArrayList<FilmTitle> readFile(String filename) throws FileNotFoundException 
 	{	
@@ -95,9 +98,23 @@ public class FilmTitle
 		return tempList;
 	}
 
-	public String filmToString() {
+	public String filmToString() 
+	{
 		return "FilmTitle [titleId=" + titleId + ", ordering=" + ordering + ", title=" + title + ", region=" + region
 				+ ", language=" + language + ", type=" + type + ", attributes=" + attributes + ", isOriginalTitle="
 				+ isOriginalTitle + "]";
+	}
+	
+	public String getRegion() //getter
+	{
+		return this.region;
+	}
+	public String getTitleId()
+	{
+		return this.titleId;
+	}
+	public String getTitle()
+	{
+		return this.title;
 	}
 }

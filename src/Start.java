@@ -16,33 +16,42 @@ public class Start /* Class used for navigating the program */
 		 * to aid in the progression of the program.*/
 		films = FilmTitle.readFile("SampleDataset-FilmTitle.csv"); //filling ArrayList up with Films
 		people = Person.readPerson("SampleDataset-Person.csv"); //filling ArrayList up with people
-		Person.displayTitleAndCategory();
 		
+		for (int i=0;i<people.size();i++)
+		{
+			System.out.println(people.get(i).personToString());
+		}
 		//MENU
 		String choice = "";
 		do {
 		System.out.println("-- FILM DATABASE SYSTEM --");
-		System.out.println("-- 1. View Films & People --");
-		System.out.println("-- 2. Display regions --");
+		System.out.println("-- 1. Display Regions --");
+		System.out.println("-- 2. Movies from Specific Region --");
 		System.out.println("-- 3. xxxx --");
 		System.out.println("-- 4. xxxx --");
+		System.out.println("-- 5. Find Film using Person (nconst) --");
 		choice = input.next();
 		switch (choice)
 		{
-		case "1": {
-			displayAll();
-			break;
-		}
-		case "2": {
+		case "1": { //task a
 			FilmTitle.listRegions();
 			break;
 		}
-		case "3": {
-			//method call
+		case "2": { //task b
+			System.out.println("-- Enter Region (region) --");
+			String regionInput = input.next().toUpperCase();
+			FilmTitle.getFilmTitlesUsingRegion(regionInput);
 			break;
 		}
-		case "4": {
-			//method call
+		case "3": { //task c
+	
+			break;
+		}
+		case "4": { //task d a
+			Person.displayTitleAndCategory();
+			break;
+		}
+		case "5": { //task d b
 			break;
 		}
 		default:

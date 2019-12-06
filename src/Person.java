@@ -14,9 +14,10 @@ public class Person
 	public String job;
 	public String characters;
 	
-	public Person(String csvLine) 
+	public Person(String csvLine) //constructor for Person, each attribute has a place in the array.
 	{
-		String csvParts[] = csvLine.split(comma);
+		String[] csvParts = new String[5];
+		csvParts = csvLine.split(comma);
 		titleId = csvParts[0];
 		ordering = csvParts[1];
 		nconst = csvParts[2];
@@ -25,7 +26,7 @@ public class Person
 		characters = csvParts[5];
 	}
 	
-	public static void displayTitleAndCategory() //task D) A)
+	public static void displayTitleAndCategory() //task D) A) -- iterates through arrayLists and compares Strings to find films/persons.
 	{
 		System.out.println("-- Enter Person (nconst) --");
 		String personInput = input.next();
@@ -33,13 +34,14 @@ public class Person
 		{
 			if (Start.people.get(i).getnConst().equals(personInput))
 			{
-				String temporaryId = Start.people.get(i).getTitleId();
+				String temporaryId = Start.people.get(i).getTitleId(); //temporary storage for titleId of (i)
 				
 				for (int j = 0; j<Start.films.size(); j++)
 				{
-					if (temporaryId.equals(Start.films.get(j).getTitleId()))
+					if (temporaryId.equals(Start.films.get(j).getTitleId())) //compares Id of person to Id of film. e.g. tt010101 = tt010101?
 					{
-						System.out.printf("-- Film: %s || Category: %s --\n", Start.films.get(j).getTitle(), Start.people.get(i).getCategory());
+						System.out.printf("-- Film: %s || Category: %s --\n", 
+							Start.films.get(j).getTitle(), Start.people.get(i).getCategory());
 					}
 				}
 			}
@@ -58,7 +60,7 @@ public class Person
 	{
 	}
 	
-	public static ArrayList<Person> readPerson(String filename) throws FileNotFoundException 
+	public static ArrayList<Person> readPerson(String filename) throws FileNotFoundException  //method that controls the reading process of Person object.
 	{	
 		ArrayList<Person> tempList = new ArrayList<>();
 		File csvFile = new File(filename);
@@ -78,7 +80,7 @@ public class Person
 		return "Person [titleId=" + titleId + ", ordering=" + ordering + ", nconst=" + nconst + ", category=" + category
 				+ ", job=" + job + ", characters=" + characters + "]";
 	}
-	public String getnConst()
+	public String getnConst() //getters
 	{
 		return this.nconst;
 	}
