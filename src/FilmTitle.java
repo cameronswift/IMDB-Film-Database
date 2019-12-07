@@ -29,35 +29,6 @@ public class FilmTitle
 		attributes = csvParts[6];
 		isOriginalTitle = csvParts[7];
 	}
-	/*public String[] lineSplit(String csvString, String s) //splits using comma
-	{
-		int index = 0;
-		int qouteCount = 0;
-		String[] parts = new String[8];
-		Arrays.fill(parts, ""); //fills all 8 elements with blank string
-		
-		for(int i = 0; i < csvString.length(); i++) //running through the line
-		{
-			if(csvString.charAt(i) != ',') //if not a comma
-			{
-				parts[index] += csvString.charAt(i);
-			}
-			if(csvString.charAt(i) == '"') //if its a quotation
-			{
-				qouteCount++;
-			}
-			if(csvString.charAt(i) == ',' && qouteCount%2 == 0)
-				index++;
-			if(csvString.charAt(i) == ',' && qouteCount%2 == 1)
-				parts[index] += csvString.charAt(i); //adds next character to parts
-		}
-		return parts;
-	} */
-	
-	public void searchFilms()
-	{
-		
-	}
 	
 	public static void listRegions() /* list all regions for every film */
 	{
@@ -71,16 +42,23 @@ public class FilmTitle
 	{
 		for (int i = 0; i<Start.films.size(); i++) 
 		{
-			if (Start.films.get(i).getRegion().contentEquals(r))
+			if (Start.films.get(i).getRegion().equals(r))
 			{
-				System.out.println(Start.films.get(i).getTitle());
+				System.out.printf("Movie Title: %s", Start.films.get(i).getTitle());
 			}
 		}
 	}
 	
-	public void searchFilms(String s) /* uses user String input, outputs film titles that contains the user's input */
+	public static void searchFilms(String s) /* uses user String input, outputs film titles that contains the user's input */
 	{
-		
+		for (int i = 0; i<Start.films.size(); i++)
+		{
+			if (Start.films.get(i).getTitle().contains(s))
+			{
+				System.out.printf("-- Title: %s || Region: %s --\n",
+						Start.films.get(i).getTitle(), Start.films.get(i).getRegion());
+			}
+		}
 	}
 	
 	public static ArrayList<FilmTitle> readFile(String filename) throws FileNotFoundException 

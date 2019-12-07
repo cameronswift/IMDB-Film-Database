@@ -2,6 +2,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.sound.midi.SysexMessage;
+
 public class Start /* Class used for navigating the program */
 {
 	static Scanner input = new Scanner(System.in);
@@ -10,26 +12,22 @@ public class Start /* Class used for navigating the program */
 	
 	public static void main(String[] args) throws FileNotFoundException 
 	{
-		/* READ methods will be called here for FilmTitle & Person class.
-		 * Methods will store Film & Person data in memory then program continues
-		 * from here. From then a repeating menu will present itself to the user,
-		 * to aid in the progression of the program.*/
 		films = FilmTitle.readFile("SampleDataset-FilmTitle.csv"); //filling ArrayList up with Films
 		people = Person.readPerson("SampleDataset-Person.csv"); //filling ArrayList up with people
-		
-		for (int i=0;i<people.size();i++)
-		{
-			System.out.println(people.get(i).personToString());
-		}
+		menu();
+	}	
 		//MENU
+	public static void menu()
+	{
 		String choice = "";
 		do {
 		System.out.println("-- FILM DATABASE SYSTEM --");
 		System.out.println("-- 1. Display Regions --");
 		System.out.println("-- 2. Movies from Specific Region --");
-		System.out.println("-- 3. xxxx --");
-		System.out.println("-- 4. xxxx --");
-		System.out.println("-- 5. Find Film using Person (nconst) --");
+		System.out.println("-- 3. Partial Name Film Search --");
+		System.out.println("-- 4. Find Film using Person (nconst) --");
+		System.out.println("-- 5. xxxx --");
+		System.out.println("-- q. Quit --");
 		choice = input.next();
 		switch (choice)
 		{
@@ -39,28 +37,45 @@ public class Start /* Class used for navigating the program */
 		}
 		case "2": { //task b
 			System.out.println("-- Enter Region (region) --");
-			String regionInput = input.next().toUpperCase();
+			String regionInput = input.next();
 			FilmTitle.getFilmTitlesUsingRegion(regionInput);
 			break;
 		}
 		case "3": { //task c
-	
+			System.out.println("-- Enter Partial Film Title --");
+			String titleInput = input.next();
+			FilmTitle.searchFilms(titleInput);
 			break;
 		}
 		case "4": { //task d a
-			Person.displayTitleAndCategory();
+			System.out.println("-- Enter Person (nconst) --");
+			String p = input.next();
+			Person.displayTitleAndCategory(p);
 			break;
 		}
 		case "5": { //task d b
+			
 			break;
 		}
-		default:
-			System.out.println("Wrong Input Entered");
+		case "6": {//task e
+			
+			break;
+		}
+		case "7": {//task f
+			
+			break;
+		}
+		case "q": {
 			System.exit(0);
+		}
+		default:
+			System.out.println("-- WRONG INPUT ENTERED, TRY AGAIN --");
+			menu();
 		}} while (!choice.equals("Q"));
 	}
 	
-	public static void displayAll() //simple method to show all films or people.
+//(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)
+	public static void displayAll() //simple method to show all films or people 
 	{
 		System.out.println("-- Display ALL Films or People ? --");
 		System.out.println("-- 1. Films --");

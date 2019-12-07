@@ -26,13 +26,11 @@ public class Person
 		characters = csvParts[5];
 	}
 	
-	public static void displayTitleAndCategory() //task D) A) -- iterates through arrayLists and compares Strings to find films/persons.
+	public static void displayTitleAndCategory(String p) //task D) A) -- iterates through arrayLists and compares Strings to find films/persons.
 	{
-		System.out.println("-- Enter Person (nconst) --");
-		String personInput = input.next();
 		for (int i = 0; i<Start.people.size(); i++)
 		{
-			if (Start.people.get(i).getnConst().equals(personInput))
+			if (Start.people.get(i).getnConst().equals(p))
 			{
 				String temporaryId = Start.people.get(i).getTitleId(); //temporary storage for titleId of (i)
 				
