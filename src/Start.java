@@ -73,8 +73,8 @@ public class Start /* Class used for navigating the program */
 			menu();
 		}} while (!choice.equals("Q"));
 	}
-	
-//(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)
+/*==================================================================================================================================================================================
+(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)(TESTING PURPOSES)*/
 	public static void displayAll() //simple method to show all films or people 
 	{
 		System.out.println("-- Display ALL Films or People ? --");
