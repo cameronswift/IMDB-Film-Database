@@ -30,14 +30,14 @@ public class Start /* Class used for navigating the program */
 		System.out.println("-- q. Quit --");
 		choice = input.next();
 		switch (choice)
-		{
+		{ 
 		case "1": { //task a
 			FilmTitle.listRegions();
 			break;
 		}
 		case "2": { //task b
 			System.out.println("-- Enter Region (region) --");
-			String regionInput = input.next();
+			String regionInput = input.next().toUpperCase();
 			FilmTitle.getFilmTitlesUsingRegion(regionInput);
 			break;
 		}

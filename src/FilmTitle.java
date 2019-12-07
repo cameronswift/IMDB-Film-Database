@@ -44,7 +44,7 @@ public class FilmTitle
 		{
 			if (Start.films.get(i).getRegion().equals(r))
 			{
-				System.out.printf("Movie Title: %s", Start.films.get(i).getTitle());
+				System.out.printf("Movie Title: %s\n", Start.films.get(i).getTitle());
 			}
 		}
 	}
