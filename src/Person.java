@@ -46,8 +46,25 @@ public class Person
 		}
 	}
 	
-	public void displayPeopleInFilm(String titleId)
+	public static void displayPeopleInFilm(String title) //task D) B)
 	{
+		String id;
+		for (int i = 0;i<Start.films.size(); i ++)
+		{
+			if (Start.films.get(i).getTitle().contains(title))
+			{
+				id = Start.films.get(i).getTitleId();
+				for(int j = 0; j<Start.people.size(); j++)
+				{
+					if (id.equals(Start.people.get(j).getTitleId())) 
+					{
+						System.out.printf("-- Name: %s || Category: %s --\n",
+								Start.people.get(j).getnConst(), Start.people.get(j).getCategory());
+					}
+				}
+			}
+		}
+		
 	}
 	
 	public void highestCredits()

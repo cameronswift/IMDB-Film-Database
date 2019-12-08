@@ -25,8 +25,8 @@ public class Start /* Class used for navigating the program */
 		System.out.println("-- 1. Display Regions --");
 		System.out.println("-- 2. Movies from Specific Region --");
 		System.out.println("-- 3. Partial Name Film Search --");
-		System.out.println("-- 4. Find Film using Person (nconst) --");
-		System.out.println("-- 5. xxxx --");
+		System.out.println("-- 4. Find Films using Person --");
+		System.out.println("-- 5. Find People who worked on film --");
 		System.out.println("-- q. Quit --");
 		choice = input.next();
 		switch (choice)
@@ -42,7 +42,7 @@ public class Start /* Class used for navigating the program */
 			break;
 		}
 		case "3": { //task c
-			System.out.println("-- Enter Partial Film Title --");
+			System.out.println("-- Enter Partial Film Title (title) --");
 			String titleInput = input.next();
 			FilmTitle.searchFilms(titleInput);
 			break;
@@ -54,7 +54,9 @@ public class Start /* Class used for navigating the program */
 			break;
 		}
 		case "5": { //task d b
-			
+			System.out.println("-- Enter title (title) --");
+			String t = input.next();
+			Person.displayPeopleInFilm(t);
 			break;
 		}
 		case "6": {//task e
