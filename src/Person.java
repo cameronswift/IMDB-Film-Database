@@ -48,17 +48,17 @@ public class Person
 	
 	public static void displayPeopleInFilm(String title) //task D) B)
 	{
-		String id;
-		for (int i = 0;i<Start.films.size(); i ++)
+		String id;//variable to hold titleId
+		for (int i = 0;i<Start.films.size(); i ++)//for filmTitles in films
 		{
-			if (Start.films.get(i).getTitle().contains(title))
+			if (Start.films.get(i).getTitle().contains(title)) //if title at film(i) = user input title
 			{
-				id = Start.films.get(i).getTitleId();
-				for(int j = 0; j<Start.people.size(); j++)
+				id = Start.films.get(i).getTitleId(); //set id to titleId of film(i)
+				for(int j = 0; j<Start.people.size(); j++) //for Person in people
 				{
-					if (id.equals(Start.people.get(j).getTitleId())) 
+					if (id.equals(Start.people.get(j).getTitleId())) //if id = Person(j)'s titleId
 					{
-						System.out.printf("-- Name: %s || Category: %s --\n",
+						System.out.printf("-- Name: %s || Category: %s --\n", //output the information
 								Start.people.get(j).getnConst(), Start.people.get(j).getCategory());
 					}
 				}
@@ -67,12 +67,59 @@ public class Person
 		
 	}
 	
-	public void highestCredits()
+	public static void highestCredits()
 	{
+		String nconstHighest = ""; //holds nconst
+		int max = 0; //holds counter for most amount of credits
+		for (int i = 0; i < Start.people.size(); i++) //for Person in people
+		{
+			int creditCount = 0; //temporary counter of credits, gets reset every iteration
+			String id = Start.people.get(i).getTitleId(); // id variable stores titleId of Person(i)
+			for (int j = 0; i < Start.films.size(); i++) //for filmTitles in films
+			{
+				if (id.equals(Start.films.get(i).getTitleId())) //if id = filmTitle(i)'s titleId
+				{
+					creditCount++; //increment temporary counter
+				}
+				if (creditCount > max) //is temporary counter higher than the max so far?
+				{
+					max = creditCount;
+					nconstHighest = Start.people.get(i).getnConst(); //stores the nconst of the Person with highest credits so far
+				}
+			}
+		}
+		for (int i = 0; i < Start.people.size(); i++) //prints out films this person has been in.
+		{
+			if (nconstHighest.equals(Start.people.get(i)))
+			{
+				
+			}
+		}
+		System.out.printf("The person with the most credits is: %s with %d.\n", nconstHighest, max);
 	}
 	
-	public void highestCreditsCategory()
+	public static void highestCreditsCategory(String cat) //similar to method above with some changes
 	{
+		String nconstHighest = "";
+		int max = 0;
+		for (int i = 0; i < Start.people.size(); i++)
+		{
+			int creditCount = 0;
+			String id = Start.people.get(i).getTitleId();
+			for (int j = 0; i < Start.films.size(); i++)
+			{
+				if (id.equals(Start.films.get(i).getTitleId()) && Start.people.get(i).getCategory().equals(cat)) //checks category is = user's chosen category
+				{
+					creditCount++;
+				}
+				if (creditCount > max)
+				{
+					max = creditCount;
+					nconstHighest = Start.people.get(i).getnConst();
+				}
+			}
+		}
+		System.out.printf("The person with the most credits is: %s with %d in category %s.\n", nconstHighest, max, cat);
 	}
 	
 	public static ArrayList<Person> readPerson(String filename) throws FileNotFoundException  //method that controls the reading process of Person object.

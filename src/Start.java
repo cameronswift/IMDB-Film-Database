@@ -27,6 +27,8 @@ public class Start /* Class used for navigating the program */
 		System.out.println("-- 3. Partial Name Film Search --");
 		System.out.println("-- 4. Find Films using Person --");
 		System.out.println("-- 5. Find People who worked on film --");
+		System.out.println("-- 6. Find Person with most credits --");
+		System.out.println("-- 7. Find Person with most credits in a category --");
 		System.out.println("-- q. Quit --");
 		choice = input.next();
 		switch (choice)
@@ -60,11 +62,15 @@ public class Start /* Class used for navigating the program */
 			break;
 		}
 		case "6": {//task e
-			
+			System.out.println("-- Finding the person with the highest number of credits --");
+			Person.highestCredits();
 			break;
 		}
 		case "7": {//task f
-			
+			System.out.println("-- Enter Category --");
+			String cat = input.next();
+			System.out.println("-- Finding the person with the highest number of credits, in");
+			Person.highestCreditsCategory(cat);
 			break;
 		}
 		case "q": {
